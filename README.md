@@ -37,7 +37,9 @@ For an aircraft to "arrive" it first has to pass through an outer "arrival" area
 *ARM_ALT* is the lower and upper altitude boundaries of aircraft that might be arriving, within *ARM_NM* of the airport.  Aircraft above or below this range are ignored.
 
 Once an aircraft has been flagged as an aircraft of interest, it will be considered to have arrived at the airport if it passes below the *ARR_ALT* altitude withing  *ARR_NM* nautical miles of the airport:
+
 **ARR_ALT = 7800**
+
 **ARR_NM = 8**
 
 Note: If these altitudes seem high, it's because South Lake Tahoe airprot is at 6268 feet MSL.  These rules for an airport with a field elevation of, say, 750 MSL might look more like *ARM_ALT = (2500, 4500)* and *ARR_ALT = 2000* or similar.  Consider the flight environment and typical profile of both arriving and transient aircraft to find parameters that work best.
