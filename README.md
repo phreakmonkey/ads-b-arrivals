@@ -46,5 +46,11 @@ Note: If these altitudes seem high, it's because South Lake Tahoe airprot is at 
 
 All arriving aircraft are logged to the *LOG* logfile.  Aircraft IDs that are in the *AIRCRAFT* list also trigger the MQTT message.  I didn't make the MQTT message a parameter because it contains a current timestamp, but you can change it as needed in the code.  (Search for "MQTT" in the code.)
 
+BTW - to find the ADS-B "Mode S" hex ID for any US registered aircraft, just look the tail number up in the FAA aircraft registry. They've all been pre-assigned whether the aircraft is equipped with ADS-B Out or not:
+
+https://registry.faa.gov/aircraftinquiry/NNum_Results.aspx?nNumberTxt=N673BF
+
+The "Mode S Code (base 16 / hex)" is the code you're looking for.
+
 
 *I'll be stunned if anyone else uses this, so shoot me a message and let me know!  LOL*
