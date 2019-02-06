@@ -19,14 +19,21 @@ While running, it also displays a "Speed Record" on the console for the 5 fastes
 ## Configuration
 The top of adsb_arrivals.py file has the configuration paramaters.  They're pretty self explanitory, but I'll go over how the script determines arrivals:
 
+
 First and foremost, the receiver has to be in a location that it can receive the aircraft within the physical proximity of the airport where you want to detect arrivals.
 
+
 **LOC = (38.893888, -119.995333)** 
+
+
 Set this to the Latitude and Longitude of the airport.  It will use the distance (in nautical miles) from this point to determine arrivals.
 
 For an aircraft to "arrive" it first has to pass through an outer "arrival" area within a prescribed altitude.  At this point that aircraft is considered an aircraft of interest and watched for arrival.
+
 **ARM_ALT = (8000, 10000)**
+
 **ARM_NM = 15**
+
 *ARM_ALT* is the lower and upper altitude boundaries of aircraft that might be arriving, within *ARM_NM* of the airport.  Aircraft above or below this range are ignored.
 
 Once an aircraft has been flagged as an aircraft of interest, it will be considered to have arrived at the airport if it passes below the *ARR_ALT* altitude withing  *ARR_NM* nautical miles of the airport:
@@ -37,4 +44,5 @@ Note: If these altitudes seem high, it's because South Lake Tahoe airprot is at 
 
 All arriving aircraft are logged to the *LOG* logfile.  Aircraft IDs that are in the *AIRCRAFT* list also trigger the MQTT message.  I didn't make the MQTT message a parameter because it contains a current timestamp, but you can change it as needed in the code.  (Search for "MQTT" in the code.)
 
-I'll be stunned if anyone else uses this, so shoot me a message and let me know!  LOL
+
+*I'll be stunned if anyone else uses this, so shoot me a message and let me know!  LOL*
