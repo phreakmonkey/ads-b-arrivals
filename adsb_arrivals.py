@@ -108,8 +108,8 @@ def scan():
       elif a.status == 1 and nm < ARR_NM and a.altitude < ARR_ALT:
         if k in AIRCRAFT:
           # MQTT Message for aircraft of interest:
-          publish.single({'topic':"lastseen/", 'payload':str(int(time.time())),
-                          'retain':True}, hostname=MQTT_HOST)
+          publish.single(topic="lastseen/", payload=str(int(time.time())),
+                         retain=True, hostname=MQTT_HOST)
         aircraft[k].status = 2
         arrstr =  '%s %s: Arriving (%s feet at %s nm)' % (
             time.ctime(), k, a.altitude, nm)
@@ -159,7 +159,7 @@ def main():
   s = connect()
   data = ''
   buf = ''
-  buffer_size = 4096
+  buffer_size = 1024
   prunetime = time.time()
   drawtime = 0
   while True:
